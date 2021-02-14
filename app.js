@@ -1,10 +1,7 @@
-
 const locationTimezone = document.querySelector(".Location-timezone");
 const weatherDescription = document.querySelector(".Weather-description");
-let temperatureDegree = document.querySelector(".Temperature-degree")
-
-const temperatureSection = document.querySelector(".Temperature");
-let temperatureSign = document.querySelector(".Temperature-sign");
+const temperatureDegree = document.querySelector(".Temperature-degree")
+const temperatureSign = document.querySelector(".Temperature-sign"); 
 
 const searchButton = document.querySelector(".Search-button"); 
 const searchInput = document.querySelector(".Search-input");
@@ -12,66 +9,48 @@ const searchInput = document.querySelector(".Search-input");
 const locationWeatherIcon = document.querySelector(".Location-weather-icon");
 
 
-if(navigator.geolocation){
+const getData = async (location) => {
+    const API = `https://api.openweathermap.org/data/2.5/weather?q=${location}&appid=c12cd420fd24effa0b81b33c545c0f3a`;
 
-    navigator.geolocation.getCurrentPosition(position => {
-        
-        long = position.coords.longitude;
-        lat = position.coords.latitude;
+    const response = await fetch(API);
+    const data = await response.json();
 
-        console.log(position)        
+    weatherInformations(data);
+}
 
-        const API = `https://api.openweathermap.org/data/2.5/weather?lat=${lat}&lon=${long}&appid=c12cd420fd24effa0b81b33c545c0f3a`;
-
-        getData(API);
-        
-    })
+const weatherInformations = (data) => {
     
+    let {icon} = data.weather[0];
+    let {description} = data.weather[0];
+    let temp = Math.floor((data.main.temp - 273.15));
+    let location = data.name.split(" ")[0];
 
-} else {
-    let cityName = "London";
-        
+    weatherDescription.textContent =  description;
+    temperatureDegree.textContent = temp;
+    locationTimezone.textContent = location;
+    locationWeatherIcon.src = `http://openweathermap.org/img/wn/${icon}@2x.png`;
 
     
-    const API = `https://api.openweathermap.org/data/2.5/weather?q=${cityName}&appid=c12cd420fd24effa0b81b33c545c0f3a`
+    document.title = locationTimezone.textContent+" "+temperatureDegree.textContent+" "+temperatureSign.textContent;
 
-    getData(API);
-
-
+    
 }
 
 
+const eventListeners = () => {
 
+    if(searchInput.value === ""){
+        getData("Ankara");
+    }
 
-function getData(API){
-    fetch(API)
-    .then(response => {
-        return response.json()
+    searchButton.addEventListener("click", ()=> {
+        getData(searchInput.value);
+        searchInput.value = "";
     })
-    .then(data => {
-        console.log(data)
 
-        let weatherIcon = data.weather[0]["icon"]
-        let description = data.weather[0]["description"];
-        let temp = Math.floor((data.main.temp - 273.15) * 1.8 + 32);
-        let location = data.name.split(" ")[0];
+  
+};
 
-        weatherDescription.textContent =  description;
-        temperatureDegree.textContent = temp;
-        locationTimezone.textContent = location;
-        locationWeatherIcon.src = `http://openweathermap.org/img/wn/${weatherIcon}@2x.png`;
-                                    
+eventListeners();
 
-        // change temperature fahrenheit to celcius
-        temperatureSection.addEventListener("click", () => {
-            if(temperatureSign.textContent === "F"){
-                temperatureDegree.textContent = Math.floor((temp - 32) / 1.8);
-                temperatureSign.textContent = "C";
-            } else {
-                temperatureSign.textContent = "F";
-                temperatureDegree.textContent = temp;
-            }  
-        })
 
-    })
-}

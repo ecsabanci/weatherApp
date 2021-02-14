@@ -53,11 +53,12 @@ body {
     .Search-input:focus {
       outline: none; }
   .Search-button {
-    border-radius: 50%;
-    background-color: #b6dce9;
+    background: transparent;
+    border: none;
     cursor: pointer; }
     .Search-button:hover {
       background-color: #85cfec;
+      border-radius: 50%;
       transition: 0.4s ease; }
     .Search-button:focus {
       outline: none; }

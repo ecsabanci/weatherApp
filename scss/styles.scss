@@ -73,12 +73,13 @@ body {
     }
 
     &-button {
-        border-radius: 50%;
-        background-color: rgb(182, 220, 233);
+        background: transparent;
+        border: none;
         cursor: pointer;
 
         &:hover {
             background-color: rgb(133, 207, 236);
+            border-radius: 50%;
             transition: 0.4s ease;
         }
 
@@ -95,6 +96,7 @@ body {
         }
     }
 }
+
 
 .Location {
     width: 30vw;
