@@ -27,7 +27,6 @@ body {
   justify-content: space-evenly;
   position: fixed;
   top: 0;
-  margin-top: 1vh;
   background-color: #147094; }
   .Navigation-image {
     width: 100px; }
@@ -46,6 +45,7 @@ body {
   display: flex;
   align-items: center;
   justify-content: space-evenly;
+  margin-top: 20vh;
   margin-bottom: 10vh; }
   .Search-input {
     padding: 2vh 2vw;
@@ -53,7 +53,7 @@ body {
     .Search-input:focus {
       outline: none; }
   .Search-button {
-    border-radius: 2vw;
+    border-radius: 50%;
     background-color: #b6dce9;
     cursor: pointer; }
     .Search-button:hover {
@@ -64,7 +64,7 @@ body {
     .Search-button:active {
       transform: scale(0.95); }
     .Search-button img {
-      width: 50px; }
+      width: 40px; }
 
 .Location {
   width: 30vw;
@@ -77,7 +77,7 @@ body {
     margin-bottom: 10vh; }
 
 .Temperature {
-  width: 10vw;
+  padding: 10vw;
   display: flex;
   align-items: center;
   justify-content: center;
