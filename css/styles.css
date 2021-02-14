@@ -1,0 +1,62 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box; }
+
+body {
+  color: white;
+  font-family: sans-serif;
+  background: linear-gradient(#2f96a3, #303e8f);
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center; }
+
+.Search {
+  width: 30vw;
+  display: flex;
+  align-items: center;
+  justify-content: space-evenly;
+  margin-bottom: 10vh; }
+  .Search-input {
+    padding: 2vh 2vw;
+    border-radius: 2vw; }
+    .Search-input:focus {
+      outline: none; }
+  .Search-button {
+    padding: 1vh 1vw;
+    border-radius: 1vw;
+    background-color: #d7eff7; }
+    .Search-button:focus {
+      outline: none; }
+    .Search-button:active {
+      transform: scale(0.95); }
+
+.Location {
+  width: 30vw;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 10vh; }
+  .Location-weather-icon {
+    margin-bottom: 10vh; }
+
+.Temperature {
+  width: 10vw;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-bottom: 10vh;
+  padding: 20px 10px;
+  cursor: pointer; }
+  .Temperature:hover {
+    border-radius: 100vh;
+    background: #3a73c9; }
+  .Temperature-degree {
+    font-size: 32px;
+    margin-right: 1vw; }
+  .Temperature-sign {
+    font-size: 20px;
+    opacity: 0.8; }

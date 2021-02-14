@@ -1,0 +1,88 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+
+
+
+body {
+    color: white;
+    font-family: sans-serif;
+    background: linear-gradient(rgb(47,150,163), rgb(48,62,143));
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+.Search {
+    width: 30vw;
+    display: flex;
+    align-items: center;
+    justify-content: space-evenly;
+    margin-bottom: 10vh;
+
+    &-input {
+        padding: 2vh 2vw;
+        border-radius: 2vw;
+
+        &:focus {
+            outline: none;
+        }
+    }
+
+    &-button {
+        padding: 1vh 1vw;
+        border-radius: 1vw;
+        background-color: rgb(215, 239, 247);
+
+        &:focus {
+            outline: none;
+        }
+
+        &:active {
+            transform: scale(0.95);
+        }
+    }
+}
+
+.Location {
+    width: 30vw;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-between;
+    margin-bottom: 10vh;
+
+    &-weather-icon {
+        margin-bottom: 10vh;
+    }
+}
+
+.Temperature {
+    width: 10vw;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-bottom: 10vh;
+    padding: 20px 10px;
+    cursor: pointer;
+
+    &:hover {
+        border-radius: 100vh;
+        background: rgb(58, 115, 201);
+    }
+
+    &-degree {
+        font-size: 32px;
+        margin-right: 1vw;
+    }
+
+    &-sign {
+        font-size: 20px;
+        opacity: 0.8;
+    }
+}
