@@ -1,2 +1,4 @@
 # weatherApp
-weather application with API
+weather application with using API
+
+*API : https://openweathermap.org/api*
