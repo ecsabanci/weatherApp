@@ -45,11 +45,11 @@ body {
   display: flex;
   align-items: center;
   justify-content: space-evenly;
-  margin-top: 20vh;
-  margin-bottom: 10vh; }
+  margin-bottom: 5vh; }
   .Search-input {
     padding: 2vh 2vw;
-    border-radius: 2vw; }
+    border-radius: 2vw;
+    box-shadow: -5px 10px #4f8094; }
     .Search-input:focus {
       outline: none; }
   .Search-button {
@@ -67,6 +67,12 @@ body {
     .Search-button img {
       width: 40px; }
 
+.Main {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center; }
+
 .Location {
   width: 30vw;
   display: flex;
@@ -75,22 +81,23 @@ body {
   justify-content: space-between;
   margin-bottom: 10vh; }
   .Location-weather-icon {
-    margin-bottom: 10vh; }
+    margin-bottom: 3vh; }
+  .Location-timezone {
+    margin-right: 3vw; }
 
 .Temperature {
-  padding: 10vw;
   display: flex;
   align-items: center;
   justify-content: center;
-  margin-bottom: 10vh;
   padding: 20px 10px;
   cursor: pointer; }
-  .Temperature:hover {
-    border-radius: 100vh;
-    background: #3a73c9; }
   .Temperature-degree {
     font-size: 32px;
     margin-right: 1vw; }
   .Temperature-sign {
     font-size: 20px;
     opacity: 0.8; }
+
+.Weather-description {
+  letter-spacing: 1.5px;
+  font-size: 20px; }

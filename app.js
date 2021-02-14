@@ -25,7 +25,7 @@ const weatherInformations = (data) => {
     let temp = Math.floor((data.main.temp - 273.15));
     let location = data.name.split(" ")[0];
 
-    weatherDescription.textContent =  description;
+    weatherDescription.textContent =  description.toUpperCase();
     temperatureDegree.textContent = temp;
     locationTimezone.textContent = location;
     locationWeatherIcon.src = `http://openweathermap.org/img/wn/${icon}@2x.png`;
@@ -43,7 +43,9 @@ const eventListeners = () => {
         getData("Ankara");
     }
 
-    searchButton.addEventListener("click", ()=> {
+    searchButton.addEventListener("click", (e)=> {
+        e.preventDefault();
+        
         getData(searchInput.value);
         searchInput.value = "";
     })

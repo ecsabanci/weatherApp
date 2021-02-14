@@ -60,12 +60,12 @@ body {
     display: flex;
     align-items: center;
     justify-content: space-evenly;
-    margin-top: 20vh;
-    margin-bottom: 10vh;
+    margin-bottom: 5vh;
 
     &-input {
         padding: 2vh 2vw;
         border-radius: 2vw;
+        box-shadow: -5px 10px #4f8094;
 
         &:focus {
             outline: none;
@@ -97,6 +97,12 @@ body {
     }
 }
 
+.Main {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
 
 .Location {
     width: 30vw;
@@ -107,23 +113,20 @@ body {
     margin-bottom: 10vh;
 
     &-weather-icon {
-        margin-bottom: 10vh;
+        margin-bottom: 3vh;
+    }
+
+    &-timezone {
+        margin-right: 3vw;
     }
 }
 
 .Temperature {
-    padding: 10vw;
     display: flex;
     align-items: center;
     justify-content: center;
-    margin-bottom: 10vh;
     padding: 20px 10px;
     cursor: pointer;
-
-    &:hover {
-        border-radius: 100vh;
-        background: rgb(58, 115, 201);
-    }
 
     &-degree {
         font-size: 32px;
@@ -133,5 +136,13 @@ body {
     &-sign {
         font-size: 20px;
         opacity: 0.8;
+    }
+}
+
+
+.Weather {
+    &-description {
+        letter-spacing: 1.5px;
+        font-size: 20px;
     }
 }
