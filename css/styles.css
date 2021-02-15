@@ -13,7 +13,6 @@ a {
 body {
   color: white;
   font-family: sans-serif;
-  background: linear-gradient(#2f96a3, #303e8f);
   height: 100vh;
   display: flex;
   flex-direction: column;
@@ -27,7 +26,7 @@ body {
   justify-content: space-evenly;
   position: fixed;
   top: 0;
-  background-color: #147094; }
+  background: transparent; }
   .Navigation-image {
     width: 100px; }
   .Navigation-items {

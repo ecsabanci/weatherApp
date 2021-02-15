@@ -18,7 +18,7 @@ a{
 body {
     color: white;
     font-family: sans-serif;
-    background: linear-gradient(rgb(47,150,163), rgb(48,62,143));
+    
     height: 100vh;
     display: flex;
     flex-direction: column;
@@ -33,7 +33,7 @@ body {
     justify-content: space-evenly;
     position: fixed;
     top: 0;
-    background-color: rgb(20, 112, 148);
+    background:transparent;
 
     &-image {
         width: 100px;

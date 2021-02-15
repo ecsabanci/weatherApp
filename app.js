@@ -25,6 +25,8 @@ const weatherInformations = (data) => {
     let temp = Math.floor((data.main.temp - 273.15));
     let location = data.name.split(" ")[0];
 
+    checkTemperature(temp);
+
     weatherDescription.textContent =  description.toUpperCase();
     temperatureDegree.textContent = temp;
     locationTimezone.textContent = location;
@@ -34,6 +36,16 @@ const weatherInformations = (data) => {
     document.title = locationTimezone.textContent+" "+temperatureDegree.textContent+" "+temperatureSign.textContent;
 
     
+
+    
+}
+
+const checkTemperature = (temp) => {
+    if(temp < 0){
+        document.body.style.background = "linear-gradient(rgb(47,150,163), rgb(48,62,143))";
+    } else {
+        document.body.style.background = "linear-gradient(rgb(228, 173, 71), rgb(223, 70, 32))";
+    }
 }
 
 
